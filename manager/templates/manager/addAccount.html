@@ -1,0 +1,25 @@
+{% extends 'manager/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            FormPage
+        </title>
+    </head>
+    
+    <body>
+    <h1 style="text-align: center; margin: 1em 0em;"> Add-Account Form</h1>
+    <div class="center-column" style="margin: auto; border-style: groove; padding: 1em 3em; border-width: 0.5em; width: 20em;">
+        <form method="POST" action=''>
+            {% csrf_token %}
+            {{form|crispy}}
+            <input class="btn1" type="submit" value="Save" style="margin-top:2%;margin-left:10%">
+        </form>
+    </div>
+    </body>
+</html>
+
+    {% endblock %}
+</html>

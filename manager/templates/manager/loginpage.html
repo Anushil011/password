@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title> Login Page</title>
+        <style>
+
+            body{
+                background-color: rgb(228, 246, 255);
+            }
+            .container{
+                margin: auto;
+                width: 50%;
+                
+                padding: 10px;
+                text-align: center;
+                padding: 70px 0;
+                
+            }
+            .input-box1 {
+                
+                margin: auto;
+                width: 80%;
+                border: 3px solid black;
+                padding: 10px;
+              }
+
+            .login-btn{
+                
+                margin: auto;
+                width:40%;
+                background-color: rgb(255, 248, 251);
+                padding: 10px;
+                margin-left: 22%;
+
+            }
+            .input-box{
+                margin: auto;
+                width: 50%;
+                background-color: rgb(140, 180, 240);
+                margin-top:10%;
+                
+                padding: 10px;
+                border: 1px solid rgb(255, 255, 255);
+              }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <form method="POST" action="">
+                {% csrf_token %}
+                    <div class="input-box">
+                        <h1> User Login</h1>
+                        <input
+                            class="input-box1"
+                            type="email"
+                            name="email"
+                            placeholder="email .."/><br><br>
+                    
+                        <input
+                            class="input-box1"
+                            type="password"
+                            name="password"
+                            placeholder="password .."/><br><br>
+                    
+                        <input class="btn btn-outline-primary" type="submit" value="login" />
+                    </div>
+        
+                </form>
+        
+                {% for message in messages %}
+                  <p id="messages">{{message}}</p>
+                  {% endfor %}
+        </div>
+    </body>
+    
+</html>
